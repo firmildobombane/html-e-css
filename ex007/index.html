@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Meu Site de Filmes</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input {
+            padding: 10px;
+            width: 200px;
+        }
+
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: white;
+            margin: 10px auto;
+            padding: 10px;
+            width: 300px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .delete {
+            color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🎬 Meu Site de Filmes</h1>
+
+<input type="text" id="movieInput" placeholder="Escreva um filme">
+<button onclick="addMovie()">Adicionar</button>
+
+<ul id="movieList"></ul>
+
+<script>
+    function addMovie() {
+        let input = document.getElementById("movieInput");
+        let movieName = input.value;
+
+        if (movieName === "") {
+            alert("Escreva o nome de um filme!");
+            return;
+        }
+
+        let li = document.createElement("li");
+        li.innerHTML = movieName + " <span class='delete' onclick='removeMovie(this)'>❌</span>";
+
+        document.getElementById("movieList").appendChild(li);
+
+        input.value = "";
+    }
+
+    function removeMovie(element) {
+        element.parentElement.remove();
+    }
+</script>
+
+</body>
+</html>
+</body>
+</html>
