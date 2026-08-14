@@ -1,0 +1,192 @@
+<html>
+<title>firmildo</title>
+<style>
+body {
+	background-image: linear-gradient(to left, blue, yellow);
+	padding: 0px;
+	
+	margin: 0px;
+	font-family: Arial, helvetica, sans-serif;
+	
+}
+.cabecalho{
+    color: white;
+    
+    
+}
+.container{
+color: black;
+width: 300px;
+    /*display: grid;*/
+    font-size: 1em;
+}
+.dp{
+padding: 10px;
+color: black;
+width:100vw;
+text-align: center;
+font-size:2em;
+}
+.pr{
+width: 100vw;
+padding: 10px;
+font-size: 5em;
+text-align: center;
+box-shadow: 1px 2px 3px black;
+}
+.perf{
+background-color: gray;
+padding: 10px;
+width: 25vw;
+height: 55vh;
+box-shadow: 1px 1px 1px black;
+margin: 10px;
+}
+.infor{
+background-color: black;
+/*text-align: justify;*/
+width: 70vw;
+color: white;
+font-size: 1em;
+padding: 10px;
+}
+.vd{
+background-color: red;
+width:70vw;
+height: 70vh;
+text-align: right;
+padding: 10px;
+
+
+display: grid;
+
+grid-template-columns: auto;
+grid-template-rows: auto;
+
+align-items: center;
+gap: 10px;
+}
+
+div > video{
+width: 70vw;
+text-align: center;
+border-radius: 20px 20px 20px 20px;
+}
+.nivel{
+width: 98vw;
+text-align: right;
+padding: 15px;
+display: grid;
+grid-template-columns: auto;
+grid-template-rows: auto;
+align-items: start;
+gap: 10px;
+}
+.sobl{
+font-size: 3em;
+
+}
+.lingua{
+color: white;
+font-size: 1em;
+padding: 5px;
+
+}
+.academic{
+font-size: 1em;
+padding: 10px;
+margin: 10px;
+box-shadow: 2px 2px 2px black;
+background-color: black;
+}
+nav#na{
+background-color: white;
+border: 1px dashed black;
+font-size: 1.5em;
+margin: 10px;
+
+}
+footer{
+color: white;
+width:100vw;
+text-align: center;
+}
+div > img{
+border-radius: 20px 20px 20px 20px;
+}
+</style>
+<body>
+<header class="cabecalho">
+<div class="container">
+<div>
+<h1 class="pr">Portifolio</h1></div>
+<div class="dp"><h2>Deixe-me presentar</h2></div>
+<div class="perf"><img id="imga" alt="derfil" th:src="@{/imagens/perfil.jpg}" width="300" height="350"></div>
+<div class="infor">
+<p>Minha informacao sobre meu vivel academico</p>
+<p>concluiu nivel medio de informatica</p>
+<p>Concluiu 2 anos de nivel superior de Gestao Informatica</p>
+<p>Desenvolvo aplicativo para android e para web</p>
+<p>Usando a linguagem java, com spring boot e thymeleaf</p>
+<p>HTML5 e CSS, veja meus projetos no GITHUB Acesse o link <a href="#" target="_blank" rel="external">Github para publico</a></p>
+<p>Contate-me pelo "+258846595729"</p></div>
+</div>
+</header>
+ <div class="vd"><video width="640" height="360" controls>
+        <source th:src="@{/imagens/janela.mp4}" type="video/mp4" id="video">
+        Seu navegador não suporta vídeo HTML5.
+    </video><!--  Este video fala sobre projeto de tv publico</video>-->
+</div>
+
+
+<main class="nivel">
+<article class="lingua">
+<form th:action="@{/habilidades}" method="post">
+<h2 class="sobl">Sobre linguagem que domino</h2>
+<p><label for="ihtml">HTML5</label>
+<input  type="range" name="html" id="ihtml" min="1" max="100" value="75" required></p>
+<p><label for="icss">CSS</label>
+<input  type="range" name="css" id="icss" min="1" max="100" value="80" required></p>
+<p><label for="ijava">JAVA</label>
+<input  type="range" name="java" id="ijava" min="1" max="100" value="90" required></p>
+<p><label for="ipring">SPRING BOOT</label>
+<input  type="range" name="spring" id="ipring" min="1" max="100" value="85" required></p>
+<p><label for="ipy">PYTHON</label>
+<input  type="range" name="pyth" id="ipy" min="1" max="100" value="65" required></p>
+<p><label for="idb">Banco de Dados Mysql</label>
+<input  type="range" name="db" id="idb" min="1" max="100" value="85" required></p>
+<p><label for="icom">Comunicação</label>
+<input  type="range" name="com" id="icom" min="1" max="100" value="85" required></p>
+<p><label for="ilide">Liderança</label>
+<input  type="range" name="lide" id="ilide" min="1" max="100" value="75" required></p>
+<p><label for="iteq">Trabalho em equipe</label>
+<input  type="range" name="teq" id="iteq" min="1" max="100" value="85" required></p>
+<p><label for="idap">Adaptabilidade</label>
+<input  type="range" name="adap" id="idap" min="1" max="100" value="65" required></p>
+
+
+<p th:if="${habilidade != null}"> CSS: <span th:text="${habilidade.css}"></span>75%</p>
+<p th:if="${habilidade != null}">HTML5: <span th:text="${habilidade.html}"></span>80%</p>
+<p th:if="${habilidade != null}">JAVA: <span th:text="${habilidade.java}"></span>90%</p>
+<p th:if="${habilidade != null}">SPRING BOOT: <span th:text="${habilidade.spring}"></span>85%</p>
+<p th:if="${habilidade != null}">PYTHON: <span th:text="${habilidade.pyth}"></span>65%</p>
+<p th:if="${habilidade != null}">Banco de Dados Mysql: <span th:text="${habilidade.db}"></span>85%</p>
+<p th:if="${habilidade != null}">Comunicação: <span th:text="${habilidade.com}"></span>85%</p>
+<p th:if="${habilidade != null}">Liderança: <span th:text="${habilidade.lide}"></span>75%</p>
+<p th:if="${habilidade != null}">Trabalho em equipe: <span th:text="${habilidade.teq}"></span>85%</p>
+<p th:if="${habilidade != null}">Adaptabilidade: <span th:text="${habilidade.adap}"></span>65%</p></form>
+<nav class="academic">
+<h3 id="na">Nivel academico</h3>
+<p>Concluiu 10 classe e 12 classe na escola Secundaria de Boane</p>
+<p>Instituto Superior Monitora 2 anos</p>
+<p>Formacao basica de desenvolvimento de software</p>
+</nav>
+<p>Projetos feitos</p>
+<p><img src="#" alt="Login"></p>
+<p><img src="#" alt="POS"></p>
+<p><img src="#" alt="Tv publico"></p>
+</article>
+</main>
+<footer><p>Site desenvolvido pelo programador sr Firmildo Bombane, contato= "+258846595729"</p></footer>
+</body>
+</html>
