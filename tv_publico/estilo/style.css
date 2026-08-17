@@ -1,0 +1,173 @@
+@charset "UTF-8";
+
+@media (max-width: 600px) {
+  .filmes img {
+    width: 100%;        /* ocupa toda a largura da tela */
+    max-width: 300px;   /* limite opcional */
+  }
+}
+body{
+    overflow-x: hidden;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: black;
+    padding: 0px;
+    margin: 0px;
+}
+img {
+  display: inline-block;   /* garante que só a imagem se mova */
+  position: relative;
+  box-shadow: 5px 5px white;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.1) rotate(3deg);
+}
+
+img:active {
+  animation: clickDown 0.3s ease;
+}
+
+@keyframes clickDown {
+  0% {
+    transform: scale(1.1) rotate(3deg) translateY(0);
+  }
+  50% {
+    transform: scale(1.1) rotate(3deg) translateY(15px); /* desce */
+  }
+  100% {
+    transform: scale(1.1) rotate(3deg) translateY(0); /* volta */
+  }
+}
+img {
+  transform-origin: center center; /* garante que o efeito seja central */
+}
+.filmes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+  gap: 20px;
+  justify-items: center;   /* centraliza cada item */
+}
+.series02{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+  gap: 20px;
+  justify-items: center;   /* centraliza cada item */
+}
+.infor{
+  background-color: rgb(112, 112, 139);
+  color: white;
+}
+.fav{
+  background-color: rgb(96, 96, 124);
+  color: white;
+}
+.destaque{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+  gap: 20px;
+  justify-items: center;   /* centraliza cada item */
+}
+.destaque img{
+   width: 100%;
+  max-width: 100%;        /* limite de largura */
+  height: auto;
+  border-radius: 20px;
+}
+.series1{
+  top: 0%;
+  right: 0px;
+  text-align: left;
+  color: white;
+  background-color: rgb(92, 92, 121);
+}
+.series02 img{
+  width: 100%;
+  max-width: 100%;        /* limite de largura */
+  height: auto;
+  border-radius: 20px;
+}
+.h3{
+    color: white;
+    font-size: 1.5em;
+    background-color: rgb(80, 80, 109);
+}
+.filmes img {
+    
+  width: 100%;
+  max-width: 100%;        /* limite de largura */
+  height: auto;
+  border-radius: 20px;
+}
+.container{
+    background-image: url('../imagens01/segunda-capa.png');
+      width: 100vw;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.titulo{
+    background-color: blue;
+    color: white;
+
+     position: fixed;     /* fixa no topo da página */
+      top: 0;              /* posição no topo */
+      left: 0;
+      width: 100%;
+    
+}
+.pes{
+
+    width: 100vw;
+    text-align: center;
+    padding: 30px;
+    border: 1px dashed black;
+}
+input[type="search"]{
+    width: 300px;      /* controla a largura */
+  height: 40px;      /* controla a altura */
+  padding: 8px 12px; /* espaço interno para o texto */
+  font-size: 16px;   /* tamanho da fonte */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+   
+}
+div > h1{
+    text-align: center;
+}
+
+
+.titulo2{
+ color: white;
+ font-size: 1.5em;
+ text-align: justify;
+    text-align: center;       /* Centraliza o texto dentro da div */
+    margin: 0 auto;           /* Centraliza a div horizontalmente */
+    max-width: 800px;         /* Define uma largura máxima para não ficar muito esticado */
+    padding: 20px;
+}
+.titulo02{
+text-align: left;     /* mantém alinhado à esquerda */
+    padding-top: 50px;    /* empurra o conteúdo para baixo */
+    padding-left: 20px;
+    color: #ce4747;
+}
+div#h2{
+    font-size: 3rem;
+    font-family: Arial, sans-serif;
+    margin: 0;
+
+}
+.abrev{
+  color: white;
+  text-align: justify;
+}
+.ultimo{
+  color: white;
+  width: 100vw;
+  text-align: center;
+}
+
+   
